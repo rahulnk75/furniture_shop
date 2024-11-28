@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment</title>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/sign_in/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/sign_in/css/style.css">
+</head>
+<body>
+    <div class="main" style="margin-top: -100px;">   
+        <!-- Sing in  Form -->
+        <section class="sign-in" >
+            <form action="" method="post">
+                {% csrf_token %}
+            <div class="container" style="height: 500px; width: 1200px;">
+                <div class="signin-content" >
+                    <div class="signin-image">
+                        <figure><img src="/static/sign_in/images/trans.avif" alt="sing up image"></figure>
+                    </div>
+                    <div class="signin-form">
+                        <h2 class="">Proceed to payment</h2>
+                            <h2 style="padding-left: 90px; color: brown;">{{customer.Name}}</h2>
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Make Payment" style="margin-left: 75px; font-size: 18px; font-weight: 600; color:black; background-color:green; "/> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </section>
+    </div>
+    <!-- JS -->
+    <script src="/static/sign_in/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/sign_in/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_sXSjc7ZbwI7M3J"
+    data-amount="{{payy_str}}"
+    data-currency="INR"
+    data-order_id="{{payment.order_id}}"
+    data-buttontext=""
+    data-name="Furniture"
+    data-description="Your description"
+    data-image=""
+    data-prefill.name="abc"
+    data-prefill.email="abc@gmail.com"
+    data-theme.color="#4badeb"
+    >
+
+</script>
+    
+</body>
+</html>
